@@ -53,6 +53,7 @@ def dump(file_path):
     image_size = struct.unpack('<I', bytes(image_size))[0]
     image_data = f.read(image_size)
     file_name = meta_data['musicName'] + '.' + meta_data['format']
+    print(os.path.join(os.path.split(file_path)[0],file_name))
     m = open(os.path.join(os.path.split(file_path)[0],file_name),'wb')
     chunk = bytearray()
     while True:
